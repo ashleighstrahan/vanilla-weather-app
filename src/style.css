@@ -6,7 +6,7 @@ h1 {
   color: #202124;
   display: block;
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 26px;
   margin-bottom: 0;
   margin-top: 5px;
@@ -17,11 +17,14 @@ h2 {
   font-size: 38px;
 }
 
+.content-wrapper {
+  margin: 30px auto;
+  max-width: 600px;
+}
+
 .weather-app {
   border: 1px solid #dadde1;
   border-radius: 4px;
-  margin: 30px auto;
-  max-width: 600px;
   padding: 20px;
 }
 
@@ -31,8 +34,9 @@ h2 {
 }
 
 .current-date-weather-description {
-  padding: 0;
+  font-size: 14px;
   list-style-type: none;
+  padding: 0;
 }
 
 .temperature-unit-measurement {
@@ -43,10 +47,18 @@ h2 {
   vertical-align: top;
 }
 
-.open-source-code-link {
+.celsius-controller {
+  text-decoration: none;
+}
+
+.weather-data {
+  font-size: 14px;
+}
+
+.open-source-code-info {
   font-size: 11px;
 }
 
-.github-link {
+.open-source-code-info a {
   text-decoration: none;
 }
