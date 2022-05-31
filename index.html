@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,50 +21,52 @@
   </head>
   <body>
     <div class="container">
-      <form>
-        <input
-          type="text"
-          class="city-search-bar"
-          placeholder="Enter city..."
-          autofocus="on"
-          autocomplete="off"
-        />
-        <input type="button" value="Search" class="btn btn-primary" />
-      </form>
-      <h1>New York, NY, USA</h1>
-      <ul class="current-date-weather-description">
-        <li>Tuesday 2:00 PM</li>
-        <li>Mostly Sunny</li>
-      </ul>
-      <div class="row">
-        <div class="col-6">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="Mostly Sunny Icon"
+      <div class="weather-app">
+        <form>
+          <input
+            type="text"
+            class="city-search-bar"
+            placeholder="Enter city..."
+            autofocus="on"
+            autocomplete="off"
           />
-          <h2>85</h2>
-          <div class="temperature-unit-measurement">
-            <span class="fahrenheit-controller"> &deg;F</span> |<span
-              class="celsius-controller"
-              >&deg;C</span
-            >
+          <input type="button" value="Search" class="btn btn-primary btn-sm" />
+        </form>
+        <h1>New York, NY, USA</h1>
+        <ul class="current-date-weather-description">
+          <li>Tuesday 2:00 PM</li>
+          <li>Mostly Sunny</li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="Mostly Sunny Icon"
+            />
+            <h2>85</h2>
+            <div class="temperature-unit-measurement">
+              <span class="fahrenheit-controller"> &deg;F</span> |<span
+                class="celsius-controller"
+                >&deg;C</span
+              >
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="weather-data">
+              <div class="humidity">Humidity: 69%</div>
+              <div class="wind-data">Wind: 15 mph</div>
+            </div>
           </div>
         </div>
-        <div class="col-6">
-          <div class="weather-data">
-            <div class="humidity">Humidity: 69%</div>
-            <div class="wind-data">Wind: 15 mph</div>
-          </div>
+        <div class="open-source-code-link">
+          Coded by Ashleigh Strahan and
+          <a
+            href="https://github.com/ashleighstrahan/vanilla-weather-app"
+            target="_blank"
+            class="github-link"
+            >open-sourced on GitHub</a
+          >
         </div>
-      </div>
-      <div class="open-source-code-link">
-        Coded by Ashleigh Strahan and
-        <a
-          href="https://github.com/ashleighstrahan/vanilla-weather-app"
-          target="_blank"
-          class="github-link"
-          >open-sourced on GitHub</a
-        >
       </div>
     </div>
     <script src="src/app.js"></script>

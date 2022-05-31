@@ -1,9 +1,33 @@
+body {
+  font-family: "Roboto Mono", monospace;
+}
+
 h1 {
+  color: #202124;
+  display: block;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
   margin-bottom: 0;
+  margin-top: 5px;
 }
 
 h2 {
   display: inline;
+  font-size: 38px;
+}
+
+.weather-app {
+  border: 1px solid #dadde1;
+  border-radius: 4px;
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.city-search-bar {
+  border: 1px solid #dadde1;
+  border-radius: 4px;
 }
 
 .current-date-weather-description {
@@ -16,7 +40,6 @@ h2 {
   font-size: 16px;
   line-height: 24px;
   margin-top: 6px;
-  padding-left: 6px;
   vertical-align: top;
 }
 
