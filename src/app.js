@@ -58,6 +58,9 @@ function produceCityWeather(response) {
   currentTemperatureDisplay.innerHTML = temperatureReturn;
   humidityDisplay.innerHTML = humidityReturn;
   windDisplay.innerHTML = windReturn;
+
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
 }
 
 function fahrenheitToCelsiusConversion(event) {
