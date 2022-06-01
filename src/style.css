@@ -17,6 +17,10 @@ h2 {
   font-size: 38px;
 }
 
+#weather-description {
+  text-transform: capitalize;
+}
+
 #current-weather-icon {
   height: 64px;
   width: 64px;

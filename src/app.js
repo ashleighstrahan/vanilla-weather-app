@@ -1,13 +1,39 @@
+function formatDate() {
+  let date = new Date();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = "0" + hour;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  return `${day} ${hour}:${minutes}`;
+}
+
 function produceCityWeather(response) {
   let searchedCityReturn =
     response.data.name + ", " + response.data.sys.country;
-  let weatherDescriptionReturn = response.data.weather[0].main;
+  let currentDateReturn = formatDate();
+  let weatherDescriptionReturn = response.data.weather[0].description;
   let weatherIconCode = response.data.weather[0].icon;
   let weatherIconReturn = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
   let temperatureReturn = Math.round(response.data.main.temp);
   let humidityReturn = response.data.main.humidity;
   let windReturn = response.data.wind.speed;
+
   let searchedCityDisplay = document.querySelector("#searched-city");
+  let dateAndTimeDisplay = document.querySelector("#weather-update-timestamp");
   let weatherDescriptionDisplay = document.querySelector(
     "#weather-description"
   );
@@ -19,12 +45,14 @@ function produceCityWeather(response) {
   );
   let humidityDisplay = document.querySelector("#humidity");
   let windDisplay = document.querySelector("#wind");
+
   searchedCityDisplay.innerHTML = searchedCityReturn;
+  dateAndTimeDisplay.innerHTML = currentDateReturn;
   weatherDescriptionDisplay.innerHTML = weatherDescriptionReturn;
   currentWeatherIconDisplay.setAttribute("src", weatherIconReturn);
   currentWeatherIconDisplay.setAttribute(
     "alt",
-    weatherDescriptionReturn + "icon"
+    weatherDescriptionReturn + " icon"
   );
   currentTemperatureDisplay.innerHTML = temperatureReturn;
   humidityDisplay.innerHTML = humidityReturn;
