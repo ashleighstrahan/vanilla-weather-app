@@ -17,6 +17,11 @@ h2 {
   font-size: 38px;
 }
 
+#current-weather-icon {
+  height: 64px;
+  width: 64px;
+}
+
 .content-wrapper {
   margin: 30px auto;
   max-width: 600px;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Weather App</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,13 +24,14 @@
     <div class="container">
       <div class="content-wrapper">
         <div class="weather-app">
-          <form>
+          <form id="city-search-form">
             <input
-              type="text"
+              type="search"
               class="city-search-bar"
-              placeholder="Enter city..."
+              placeholder="Enter city"
               autofocus="on"
               autocomplete="off"
+              id="enter-city-search"
             />
             <input
               type="button"
@@ -37,18 +39,19 @@
               class="btn btn-primary btn-sm"
             />
           </form>
-          <h1>New York, NY, USA</h1>
+          <h1 id="searched-city">New York, US</h1>
           <ul class="current-date-weather-description">
             <li>Tuesday 2:00 PM</li>
-            <li>Mostly Sunny</li>
+            <li id="weather-description">Mostly Sunny</li>
           </ul>
           <div class="row">
             <div class="col-6">
               <img
                 src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                 alt="Mostly Sunny Icon"
+                id="current-weather-icon"
               />
-              <h2>85</h2>
+              <h2 id="current-temperature">85</h2>
               <div class="temperature-unit-measurement">
                 <span class="fahrenheit-controller"> &deg;F</span>|<a
                   href="#"
@@ -59,8 +62,10 @@
             </div>
             <div class="col-6">
               <div class="weather-data">
-                <div class="humidity">Humidity: 69%</div>
-                <div class="wind-data">Wind: 15 mph</div>
+                <div class="humidity">
+                  Humidity: <span id="humidity">69</span>%
+                </div>
+                <div class="wind-data">Wind: <span id="wind">15</span> mph</div>
               </div>
             </div>
           </div>
