@@ -1,9 +1,9 @@
 body {
   font-family: "Roboto Mono", monospace;
+  color: #202124;
 }
 
 h1 {
-  color: #202124;
   display: block;
   font-size: 22px;
   font-weight: 600;
@@ -80,6 +80,20 @@ h2 {
 
 .open-source-code-info {
   font-size: 11px;
+}
+
+.six-day-forecast-display {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.forecast-temperatures {
+  font-size: 13px;
+}
+
+.forecast-day,
+.forecast-lo-temperature {
+  opacity: 0.5;
 }
 
 .open-source-code-info a {
