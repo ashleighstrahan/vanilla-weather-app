@@ -21,14 +21,13 @@ function formatDate() {
   return `${day} ${hour}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#six-day-forecast");
 
   let days = ["Thur", "Fri", "Sat"];
 
   let forecastHTML = `<div class="row">`;
-  //let apiKey = "a5b901c068d44bf01fba6c03d580de88"
-  //let forecastApi = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`
 
   days.forEach(function (day) {
     forecastHTML =
@@ -51,6 +50,15 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function handleCoordinates(coordinates) {
+  let apiKey = "a5b901c068d44bf01fba6c03d580de88";
+  let latitude = coordinates.lat;
+  let longitude = coordinates.lon;
+  let forecastApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+
+  axios.get(forecastApi).then(displayForecast);
 }
 
 function produceCityWeather(response) {
@@ -94,7 +102,7 @@ function produceCityWeather(response) {
   fahrenheitLink.classList.add("active");
   celsiusLink.classList.remove("active");
 
-  displayForecast();
+  handleCoordinates(response.data.coord);
 }
 
 function fahrenheitToCelsiusConversion(event) {
