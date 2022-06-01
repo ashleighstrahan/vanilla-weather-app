@@ -21,6 +21,38 @@ function formatDate() {
   return `${day} ${hour}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#six-day-forecast");
+
+  let days = ["Thur", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+  //let apiKey = "a5b901c068d44bf01fba6c03d580de88"
+  //let forecastApi = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `                
+    <div class="col-2">
+    <div class="forecast-day">${day}</div>
+    <img
+        src="https://openweathermap.org/img/wn/03d@2x.png"
+        alt=""
+        width="52px"
+    />
+    <div class="forecast-temperatures">
+    <span class="forecast-hi-temperature">85&deg;</span>
+    <span class="forecast-lo-temperature">97&deg;</span>
+    </div>
+    </div>
+    `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function produceCityWeather(response) {
   let searchedCityReturn = `${response.data.name}, ${response.data.sys.country}`;
   let currentDateReturn = formatDate();
@@ -61,6 +93,8 @@ function produceCityWeather(response) {
 
   fahrenheitLink.classList.add("active");
   celsiusLink.classList.remove("active");
+
+  displayForecast();
 }
 
 function fahrenheitToCelsiusConversion(event) {
