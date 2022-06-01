@@ -3,7 +3,7 @@ function produceCityWeather(response) {
     response.data.name + ", " + response.data.sys.country;
   let weatherDescriptionReturn = response.data.weather[0].main;
   let weatherIconCode = response.data.weather[0].icon;
-  let weatherIconReturn = `http://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
+  let weatherIconReturn = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
   let temperatureReturn = Math.round(response.data.main.temp);
   let humidityReturn = response.data.main.humidity;
   let windReturn = response.data.wind.speed;
