@@ -21,31 +21,43 @@ function formatDate() {
   return `${day} ${hour}:${minutes}`;
 }
 
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#six-day-forecast");
 
-  let days = ["Thur", "Fri", "Sat"];
-
   let forecastHTML = `<div class="row">`;
-
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `                
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 7) {
+      forecastHTML += `                
     <div class="col-2">
-    <div class="forecast-day">${day}</div>
+    <div class="forecast-day">${formatForecastDay(forecastDay.dt)}</div>
     <img
-        src="https://openweathermap.org/img/wn/03d@2x.png"
+        src="https://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png"
         alt=""
         width="52px"
     />
     <div class="forecast-temperatures">
-    <span class="forecast-hi-temperature">85&deg;</span>
-    <span class="forecast-lo-temperature">97&deg;</span>
+    <span class="forecast-hi-temperature">${Math.round(
+      forecastDay.temp.max
+    )}&deg;</span>
+    <span class="forecast-lo-temperature">${Math.round(
+      forecastDay.temp.min
+    )}&deg;</span>
     </div>
     </div>
     `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
