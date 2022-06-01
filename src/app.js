@@ -1,5 +1,4 @@
 function produceCityWeather(response) {
-  console.log(response);
   let searchedCityReturn =
     response.data.name + ", " + response.data.sys.country;
   let weatherDescriptionReturn = response.data.weather[0].main;
