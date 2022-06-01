@@ -39,26 +39,26 @@
               class="btn btn-primary btn-sm"
             />
           </form>
-          <h1 id="searched-city">New York, US</h1>
+          <h1 id="searched-city"></h1>
           <ul class="current-date-weather-description">
             <li>
               Last Updated:
               <span id="weather-update-timestamp"></span>
             </li>
-            <li id="weather-description">Mostly Sunny</li>
+            <li id="weather-description"></li>
           </ul>
           <div class="row">
             <div class="col-6">
-              <img
-                src="https://openweathermap.org/img/wn/02d@2x.png"
-                alt="Mostly Sunny Icon"
-                id="current-weather-icon"
-              />
-              <h2 id="current-temperature">85</h2>
+              <img src="#" alt="" id="current-weather-icon" />
+              <h2 id="current-temperature"></h2>
               <div class="temperature-unit-measurement">
-                <span class="fahrenheit-controller"> &deg;F</span>|<a
+                <a
                   href="#"
-                  class="celsius-controller"
+                  class="fahrenheit-controller active"
+                  id="fahrenheit-link"
+                >
+                  &deg;F</a
+                >|<a href="#" class="celsius-controller" id="celsius-link"
                   >&deg;C</a
                 >
               </div>
@@ -66,9 +66,9 @@
             <div class="col-6">
               <div class="weather-data">
                 <div class="humidity">
-                  Humidity: <span id="humidity">69</span>%
+                  Humidity: <span id="humidity"></span>%
                 </div>
-                <div class="wind-data">Wind: <span id="wind">15</span> mph</div>
+                <div class="wind-data">Wind: <span id="wind"></span> mph</div>
               </div>
             </div>
           </div>

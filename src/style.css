@@ -15,6 +15,7 @@ h1 {
 h2 {
   display: inline;
   font-size: 38px;
+  margin-right: -9px;
 }
 
 #weather-description {
@@ -52,12 +53,25 @@ h2 {
   display: inline-block;
   font-size: 16px;
   line-height: 24px;
-  margin-top: 6px;
+  margin-top: 3px;
   vertical-align: top;
+}
+
+.fahrenheit-controller {
+  text-decoration: none;
 }
 
 .celsius-controller {
   text-decoration: none;
+}
+
+.active {
+  color: #202124;
+}
+
+.active:hover {
+  color: #202124;
+  cursor: text;
 }
 
 .weather-data {
