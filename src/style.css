@@ -1,6 +1,17 @@
 body {
   font-family: "Roboto Mono", monospace;
   color: #202124;
+  background: linear-gradient(
+    179.7deg,
+    rgb(248, 126, 126) -0.5%,
+    rgb(251, 206, 143) 35.3%,
+    rgb(184, 252, 233) 67.2%,
+    rgb(118, 162, 229) 92.3%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -41,6 +52,7 @@ h1 {
 }
 
 .weather-app {
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #dadde1;
   border-radius: 4px;
   padding: 20px;
