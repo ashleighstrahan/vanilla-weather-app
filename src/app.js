@@ -152,6 +152,23 @@ function searchForCity(city) {
   axios.get(baseUrl).then(produceCityWeather);
 }
 
+function retrieveCurrentLocationWeather(response) {
+  let latitude = response.coords.latitude;
+  let longitude = response.coords.longitude;
+  let apiKey = "a5b901c068d44bf01fba6c03d580de88";
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+
+  axios.get(weatherUrl).then(produceCityWeather);
+}
+
+function currentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(retrieveCurrentLocationWeather);
+}
+
+let currentLocationButton = document.querySelector("#current-location");
+currentLocationButton.addEventListener("click", currentLocation);
+
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", fahrenheitToCelsiusConversion);
 

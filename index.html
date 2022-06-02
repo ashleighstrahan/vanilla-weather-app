@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Weather App</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/52e2bf90a9.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,10 +38,11 @@
               id="enter-city-search"
             />
             <input
-              type="button"
+              type="submit"
               value="Search"
               class="btn btn-primary btn-sm"
             />
+            <i class="fa-solid fa-location-dot" id="current-location"></i>
           </form>
           <h1 id="searched-city"></h1>
           <ul class="current-date-weather-description">
